@@ -1,21 +1,23 @@
 let progressInterval;
 let isPaused = true;
+let duration = 230; // 3 minutes 50 seconds
+let currentTime = 0;
+
+const progressBar = document.getElementById('progressBar');
+const elapsedTime = document.getElementById('elapsed-time');
+const remainingTime = document.getElementById('remaining-time');
+const icon = document.getElementById("icon");
 
 function changeIcon() {
-    var icon = document.getElementById("icon");
-    var progressBar = document.getElementById("progressBar");
-
     console.log("Icon class before change:", icon.className);
     console.log("Progress bar animation state before change:", progressBar.style.animationPlayState);
 
     if (icon.classList.contains("fa-play")) {
-        icon.classList.remove("fa-play");
-        icon.classList.add("fa-pause");
+        icon.classList.replace("fa-play", "fa-pause");
         progressBar.classList.add("running");
         startProgress();
     } else {
-        icon.classList.remove("fa-pause");
-        icon.classList.add("fa-play");
+        icon.classList.replace("fa-pause", "fa-play");
         progressBar.classList.remove("running");
         pauseProgress();
     }
@@ -53,13 +55,19 @@ function updateProgress() {
 
     if (currentTime >= duration) {
         clearInterval(progressInterval);
+        resetIconAndProgressBar();
     }
 }
 
+function resetIconAndProgressBar() {
+    icon.classList.replace("fa-pause", "fa-play");
+    progressBar.classList.remove("running");
+    resetProgressBar();
+}
+
 function resetProgressBar() {
-    var progressBar = document.getElementById("progressBar");
     progressBar.classList.remove("progress-bar");
-    void progressBar.offsetWidth;
+    void progressBar.offsetWidth; // Trigger reflow
     progressBar.classList.add("progress-bar");
 
     currentTime = 0;
@@ -76,13 +84,7 @@ function resetProgressBar() {
     progressBar.value = 0;
 }
 
-// Variables
-const progressBar = document.getElementById('progressBar');
-const elapsedTime = document.getElementById('elapsed-time');
-const remainingTime = document.getElementById('remaining-time');
-
-let duration = 230; // 3 minutes 50 seconds
-let currentTime = 0;
+progressBar.addEventListener('animationend', resetIconAndProgressBar);
 
 function updateDeviceText() {
     const deviceElement = document.querySelector('.device');
@@ -96,15 +98,10 @@ function updateDeviceText() {
 }
 
 updateDeviceText();
-
 window.addEventListener('resize', updateDeviceText);
 
 function toggleSwitchColor(switchElement) {
-    if (switchElement.style.color === 'rgb(29, 207, 93)') {
-        switchElement.style.color = '';
-    } else {
-        switchElement.style.color = '#1dcf5d';
-    }
+    switchElement.style.color = switchElement.style.color === 'rgb(29, 207, 93)' ? '' : '#1dcf5d';
 }
 
 const switchOne = document.getElementById('switchone');

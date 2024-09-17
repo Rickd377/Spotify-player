@@ -83,7 +83,8 @@ a {
     background-color: #fff;
     border-radius: 5px;
     z-index: 3;
-    animation: load 230s linear;
+    animation: load 230000ms linear;
+    /* animation: load 2s linear; */
     animation-iteration-count: 1;
     animation-play-state: paused;
 }
@@ -203,6 +204,12 @@ input::-webkit-slider-thumb {
     border-radius: 50%;
     background-color: white;
     box-shadow: -208px 0 0 200px white;
+}
+
+#audioElement {
+    position: absolute;
+    top: 5px;
+    left: 5px;
 }
 
 @media screen and (max-width: 600px) {
