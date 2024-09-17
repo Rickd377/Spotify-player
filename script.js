@@ -7,6 +7,7 @@ const progressBar = document.getElementById('progressBar');
 const elapsedTime = document.getElementById('elapsed-time');
 const remainingTime = document.getElementById('remaining-time');
 const icon = document.getElementById("icon");
+const audio = new Audio('Images/Starboy.mp3');
 
 function changeIcon() {
     console.log("Icon class before change:", icon.className);
@@ -16,10 +17,12 @@ function changeIcon() {
         icon.classList.replace("fa-play", "fa-pause");
         progressBar.classList.add("running");
         startProgress();
+        audio.play();
     } else {
         icon.classList.replace("fa-pause", "fa-play");
         progressBar.classList.remove("running");
         pauseProgress();
+        audio.pause();
     }
 
     console.log("Icon class after change:", icon.className);
