@@ -85,6 +85,10 @@ function resetProgressBar() {
     remainingTime.textContent = `-${remainingMinutes}:${remainingSeconds.toString().padStart(2, '0')}`;
 
     progressBar.value = 0;
+
+    // Restart the audio
+    audio.currentTime = 0;
+    audio.play();
 }
 
 progressBar.addEventListener('animationend', resetIconAndProgressBar);
