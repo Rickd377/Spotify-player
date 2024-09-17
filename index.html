@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="style.css">
     <title>Spotify player</title>
 </head>
-<body>
+<body id="starboy">
     <div class="player">
-        <div class="album-cover"></div>
-        <div class="device">device</div>
+        <div class="album-cover album-starboy"></div>
+        <div class="device">This Computer</div>
         <div class="song-title">starboy</div>
-        <div class="artist">song • the weeknd, daft punk</div>
+        <div class="artist">the weeknd, daft punk</div>
         <div class="progress-bar" id="progressBar"></div>
         <div class="times">
             <div id="elapsed-time"></div>
@@ -23,7 +23,9 @@
             <i class="fa-solid fa-shuffle" id="switchone" onclick="switchColor(this)"></i>
             <i class="fa-solid fa-backward" id="backBtn" onclick="resetProgressBar()"></i>
             <i class="fa-solid fa-play" id="icon" onclick="changeIcon()"></i>
+            <a href="false_alarm.html">
             <i class="fa-solid fa-forward" id="forwardBtn"></i>
+            </a>
             <i class="fa-solid fa-repeat" id="switchtwo" onclick="switchColor(this)"></i>
         </div>
         <div class="volume">
@@ -31,6 +33,10 @@
             <input type="range" min="0" step="1" max="100" value="30" />
             <i class="fa-solid fa-volume-high"></i>
         </div>
+        <!-- <audio id="audioElement" controls>
+            <source src="Images/Starboy.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio> -->
     </div>
     <script src="script.js"></script>
 </body>

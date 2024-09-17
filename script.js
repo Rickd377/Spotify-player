@@ -83,3 +83,35 @@ const remainingTime = document.getElementById('remaining-time');
 
 let duration = 230; // 3 minutes 50 seconds
 let currentTime = 0;
+
+function updateDeviceText() {
+    const deviceElement = document.querySelector('.device');
+    if (window.innerWidth <= 600) {
+        deviceElement.textContent = "This Phone";
+    } else if (window.innerWidth <= 900) {
+        deviceElement.textContent = "This Tablet";
+    } else {
+        deviceElement.textContent = "This Computer";
+    }
+}
+
+updateDeviceText();
+
+window.addEventListener('resize', updateDeviceText);
+
+function toggleSwitchColor(switchElement) {
+    if (switchElement.style.color === 'rgb(29, 207, 93)') {
+        switchElement.style.color = '';
+    } else {
+        switchElement.style.color = '#1dcf5d';
+    }
+}
+
+const switchOne = document.getElementById('switchone');
+const switchTwo = document.getElementById('switchtwo');
+
+switchOne.style.color = '';
+switchTwo.style.color = '';
+
+switchOne.addEventListener('click', () => toggleSwitchColor(switchOne));
+switchTwo.addEventListener('click', () => toggleSwitchColor(switchTwo));
