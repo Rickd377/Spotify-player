@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/29186d169c.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/Images/Spotify_logo.png">
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/starboy.css">
+    <title>Starboy</title>
+</head>
+<body id="starboy">
+    <a class="backpage" href="../index.html">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+    <div class="player">
+        <div class="album-cover album-starboy"></div>
+        <div class="device">This Computer</div>
+        <div class="song-title">starboy</div>
+        <div class="artist">the weeknd, daft punk</div>
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="times">
+            <div id="elapsed-time"></div>
+            <div id="remaining-time"></div>
+        </div>
+        <div class="play-buttons">
+            <i class="fa-solid fa-shuffle" id="switchone" onclick="switchColor(this)"></i>
+            <i class="fa-solid fa-backward" id="backBtn" onclick="resetProgressBar()"></i>
+            <i class="fa-solid fa-play" id="icon" onclick="changeIcon()"></i>
+            <a href="west-coast.html">
+            <i class="fa-solid fa-forward" id="forwardBtn"></i>
+            </a>
+            <i class="fa-solid fa-repeat" id="switchtwo" onclick="switchColor(this)"></i>
+        </div>
+        <div class="volume">
+            <i class="fa-solid fa-volume-low"></i>
+            <input type="range" min="0" step="1" max="100" value="30" />
+            <i class="fa-solid fa-volume-high"></i>
+        </div>
+    </div>
+    <script src="../Javascript/starboy.js"></script>
+</body>
+</html>

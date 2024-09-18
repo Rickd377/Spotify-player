@@ -1,0 +1,27 @@
+@keyframes load {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.progress-bar::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 3;
+    animation: load 221000ms linear;
+    /* animation: load 2s linear; */
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+}
+
+#west-coast {
+    background-image: url(/Images/breath.jpg);
+}

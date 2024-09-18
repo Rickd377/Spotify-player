@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    background-size: cover;
+    backdrop-filter: blur(40px);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.player {
+    background-color: #1a251d;
+    height: fit-content;
+    width: 19rem;
+    border-radius: 33px;
+    padding: 20px 20px 40px 20px;
+    box-shadow: -5px 10px 20px rgba(0,0,0,0.5);
+}
+
+.album-cover {
+    border-radius: 30px;
+    aspect-ratio: 1/1;
+    background-size: cover;
+}
+
+.album-starboy {
+    background-image: url(/Images/weeknd.png);
+}
+
+.device {
+    color: #1dcf5d;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin: 10px 0 5px 0;
+    font-size: 13px;
+}
+
+.song-title {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.artist {
+    font-weight: 300;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+.progress-bar {
+    position: relative;
+}
+
+.progress-bar-full::before {
+    width: 100% !important;
+}
+
+.progress-bar.running::before {
+    animation-play-state: running;
+}
+
+.progress-bar::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    right: 0;
+    height: 4px;
+    background-color: #545656;
+    border-radius: 5px;
+}
+
+.times {
+    position: relative;
+}
+
+.times #elapsed-time {
+    position: absolute;
+    color: #545656;
+    left: 0;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.times #remaining-time {
+    position: absolute;
+    color: #545656;
+    right: 0;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.play-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 55px;
+}
+
+.fa-backward,
+.fa-pause,
+.fa-play,
+.fa-forward {
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.fa-pause,
+.fa-play {
+    width: 20px;
+}
+
+#switchone.default {
+    color: white;
+}
+
+#switchone.changed {
+    color: #1dcf5d;
+}
+
+#switchtwo.default {
+    color: white;
+}
+
+#switchtwo.changed {
+    color: #1dcf5d;
+}
+
+.fa-shuffle,
+.fa-repeat {
+    width: 15px;
+    cursor: pointer;
+}
+
+.backpage {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background-color: #222;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -2.5px 7px 20px rgba(0,0,0,0.5);
+}
+
+.backpage i {
+    font-size: 35px;
+    cursor: pointer;
+    color: white;
+}
+
+.volume {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #545656;
+    font-size: 13px;
+    gap: 5px;
+    margin-top: 30px;
+}
+
+.volume input {
+    max-width: 400px;
+    width: 65%;
+    margin: 0 10px;
+    appearance: none;
+    height: 4px;
+    border-radius: 25px;
+    background-color: #545656;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+input::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: -208px 0 0 200px white;
+}
+
+#audioElement {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-position:left;
+    }
+
+    .volume {
+        margin-top: 20px;
+    }
+
+    .play-buttons {
+        margin-top: 40px;
+    }
+}
